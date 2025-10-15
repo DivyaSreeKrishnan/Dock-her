@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world-pod
+  labels:
+    project: helloworld
+spec:
+  containers:
+    - name: helloworld-container
+      image: divyasreekrishnan/docker-hello-world
+      ports:
+        - containerPort: 5000
