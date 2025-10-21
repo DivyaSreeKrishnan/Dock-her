@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myreplicaset
+  labels:
+    app: helloworldapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: helloworld
+  template:
+    metadata:
+      name: hello-world-pod
+      labels:
+        project: helloworld
+    spec:
+      containers:
+        - name: helloworld-container
+          image: divyasreekrishnan/docker-hello-world
+          ports:
+          - containerPort: 5000
+
